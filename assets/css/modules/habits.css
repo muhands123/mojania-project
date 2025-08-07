@@ -1,0 +1,100 @@
+/* تنسيقات قائمة العادات */
+.habits-list {
+  margin: 20px 0;
+}
+
+.habit-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.habit-item.completed {
+  opacity: 0.7;
+  background: #f8f8f8;
+}
+
+.habit-item.completed .habit-text {
+  text-decoration: line-through;
+  color: #777;
+}
+
+/* تنسيقات خانة التأشير */
+.habit-checkbox {
+  position: relative;
+  margin-right: 12px;
+}
+
+.habit-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.habit-checkbox input:checked ~ .checkmark {
+  background-color: var(--primary-color);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.habit-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* نص العادة */
+.habit-text {
+  flex: 1;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+/* زر الحذف */
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* حالة عدم وجود عادات */
+.empty-state {
+  text-align: center;
+  padding: 30px 0;
+  color: #666;
+}
+
+.empty-state img {
+  width: 100px;
+  opacity: 0.5;
+  margin-bottom: 15px;
+}
+
+.empty-state p {
+  margin: 10px 0 0;
+}
