@@ -1,0 +1,25 @@
+/* تنسيقات أداة العناوين */
+#titles-tool .input-group {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+#titles-tool input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#titles-tool .results {
+    margin-top: 20px;
+}
+
+.title-suggestion {
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border-right: 3px solid var(--primary-color);
+}
