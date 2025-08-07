@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mojania - العادات والنقاط</title>
+    <title>Mojania - العادات والعناوين</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/effects.css">
 </head>
 <body>
     <div class="container">
-        <!-- رأس الصفحة -->
         <header>
             <h1>مرحبًا في <span class="logo">Mojania</span></h1>
             <div class="points-display">
@@ -17,12 +17,25 @@
             </div>
         </header>
 
-        <!-- قسم العادات -->
-        <section class="habits-tool">
-            <h2>العادات اليومية</h2>
-            <div id="habits-list"></div>
-            <button id="add-habit-btn" class="primary-btn">+ أضف عادة</button>
-        </section>
+        <main>
+            <!-- قسم العناوين -->
+            <section class="tool-card">
+                <h2>مولد العناوين</h2>
+                <input type="text" id="title-input" placeholder="اكتب موضوعك هنا...">
+                <button id="generate-title-btn" class="primary-btn">توليد عناوين</button>
+                <div id="titles-result"></div>
+            </section>
+
+            <!-- قسم العادات -->
+            <section class="tool-card">
+                <h2>العادات اليومية</h2>
+                <div id="habits-list"></div>
+                <button id="add-habit-btn" class="primary-btn">+ أضف عادة</button>
+            </section>
+        </main>
+
+        <!-- مكان ظهور التأثيرات الخاصة -->
+        <div id="effects-container"></div>
     </div>
 
     <!-- ملفات الجافاسكريبت -->
