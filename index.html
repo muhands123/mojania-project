@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- المعلومات الأساسية -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mojania - العادات والعناوين</title>
+    <title>موجانيا - العادات والعناوين</title>
+    
+    <!-- الروابط -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/effects.css">
 </head>
 <body>
     <div class="container">
+        <!-- رأس الصفحة -->
         <header>
-            <h1>مرحبًا في <span class="logo">Mojania</span></h1>
+            <h1>مرحبًا في <span class="logo">موجانيا</span></h1>
             <div class="points-display">
                 نقاطك: <span id="points-counter">0</span>
             </div>
         </header>
 
+        <!-- المحتوى الرئيسي -->
         <main>
-            <!-- قسم العناوين -->
+            <!-- أداة العناوين -->
             <section class="tool-card">
-                <h2>مولد العناوين</h2>
+                <h2>مولد العناوين الذكية</h2>
                 <input type="text" id="title-input" placeholder="اكتب موضوعك هنا...">
-                <button id="generate-title-btn" class="primary-btn">توليد عناوين</button>
+                <button id="generate-btn" class="primary-btn">توليد</button>
                 <div id="titles-result"></div>
             </section>
 
-            <!-- قسم العادات -->
+            <!-- أداة العادات -->
             <section class="tool-card">
                 <h2>العادات اليومية</h2>
                 <div id="habits-list"></div>
@@ -34,7 +39,7 @@
             </section>
         </main>
 
-        <!-- مكان ظهور التأثيرات الخاصة -->
+        <!-- مكان ظهور التأثيرات -->
         <div id="effects-container"></div>
     </div>
 
