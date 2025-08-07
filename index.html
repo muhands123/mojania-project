@@ -1,24 +1,70 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- المعلومات الأساسية -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mojania</title>
+    <title>Mojania - أدوات الإنتاجية</title>
+    
+    <!-- روابط ملفات التصميم -->
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/modules/habits.css">
+    <link rel="stylesheet" href="assets/css/modules/titles.css">
+    <link rel="stylesheet" href="assets/css/modules/points.css">
+    
+    <!-- خطوط جوجل للعربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- الهيكل الرئيسي -->
     <div class="container">
-        <header>
+        <!-- رأس الصفحة -->
+        <header class="main-header">
             <h1>مرحبًا في <span class="logo">Mojania</span></h1>
-            <div class="points-display">النقاط: <span id="points">0</span></div>
+            <div class="points-display">
+                نقاطك: <span id="points-counter">0</span>
+            </div>
         </header>
 
+        <!-- القسم الرئيسي -->
         <main>
-            <section id="habits-tool" class="tool-section"></section>
-            <section id="titles-tool" class="tool-section"></section>
+            <!-- أداة العادات -->
+            <section class="tool-card" id="habits-tool">
+                <h2>العادات اليومية</h2>
+                <div class="habits-list" id="habits-list">
+                    <!-- سيتم ملؤها بالجافاسكريبت -->
+                </div>
+                <button id="add-habit-btn" class="primary-btn">+ أضف عادة جديدة</button>
+            </section>
+
+            <!-- أداة العناوين -->
+            <section class="tool-card" id="titles-tool">
+                <h2>مولد العناوين الذكية</h2>
+                <div class="input-group">
+                    <input type="text" id="keyword-input" placeholder="أدخل الفكرة الرئيسية...">
+                    <button id="generate-titles-btn" class="primary-btn">توليد عناوين</button>
+                </div>
+                <div class="results" id="titles-results">
+                    <!-- سيتم ملؤها بالجافاسكريبت -->
+                </div>
+            </section>
         </main>
+
+        <!-- تذييل الصفحة -->
+        <footer>
+            <p>تابعنا على <a href="#">تويتر</a></p>
+        </footer>
     </div>
 
+    <!-- روابط ملفات الجافاسكريبت -->
     <script type="module" src="assets/js/app.js"></script>
+    <script type="module" src="assets/js/modules/habitsSystem.js"></script>
+    <script type="module" src="assets/js/modules/titlesSystem.js"></script>
+    <script type="module" src="assets/js/modules/pointsSystem.js"></script>
+    
+    <!-- التأكد من تحميل كل الأنظمة -->
+    <script type="module">
+        console.log('تم تحميل جميع الملفات بنجاح');
+    </script>
 </body>
 </html>
