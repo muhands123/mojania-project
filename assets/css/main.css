@@ -17,33 +17,13 @@ body {
     margin: 0 auto;
 }
 
-/* تنسيقات العادات */
-.habits-tool {
+/* بطاقات الأدوات */
+.tool-card {
     background: white;
     border-radius: 10px;
     padding: 20px;
-    margin-top: 20px;
+    margin: 20px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-#habits-list {
-    margin: 15px 0;
-}
-
-.habit-item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-}
-
-/* تنسيقات النقاط */
-.points-display {
-    background: var(--primary);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    display: inline-block;
 }
 
 /* الأزرار */
@@ -54,4 +34,23 @@ body {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
+}
+
+/* حقل الإدخال */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* عرض النقاط */
+.points-display {
+    background: var(--primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
 }
