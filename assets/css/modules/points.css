@@ -1,16 +1,17 @@
-/* تنسيقات نظام النقاط */
-.points-display {
-    background: var(--primary-color);
+.points-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4CAF50;
     color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    animation: fadeInOut 2s ease-in-out;
 }
 
-.points-display::before {
-    content: "★";
-    font-size: 1.2em;
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
 }
