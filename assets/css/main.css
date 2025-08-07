@@ -1,56 +1,57 @@
-/* التنسيقات العامة لكل الصفحة */
+/* التنسيقات العامة */
 :root {
-  --primary-color: #2c8dfb; /* اللون الأساسي */
-  --secondary-color: #f8f9fa; /* اللون الثانوي */
-  --text-color: #333; /* لون النص الأساسي */
-  --border-radius: 10px; /* زوايا دائرية */
+    --primary: #2c8dfb;
+    --secondary: #f5f7fa;
+    --text: #333;
 }
 
-/* إعدادات الصفحة الكاملة */
 body {
-  font-family: 'Tajawal', sans-serif;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 20px;
-  line-height: 1.6;
+    font-family: 'Tajawal', sans-serif;
+    background: var(--secondary);
+    margin: 0;
+    padding: 20px;
 }
 
-/* التنسيقات الخاصة بالهيدر */
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.logo {
-  color: var(--primary-color);
-  font-weight: 700;
+/* تنسيقات العادات */
+.habits-tool {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* تنسيقات بطاقات الأدوات */
-.tool-card {
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+#habits-list {
+    margin: 15px 0;
 }
 
-/* تنسيقات عرض النقاط */
+.habit-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* تنسيقات النقاط */
 .points-display {
-  background: var(--primary-color);
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-weight: bold;
+    background: var(--primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
 }
 
-/* التنسيقات للهواتف */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    gap: 15px;
-  }
+/* الأزرار */
+.primary-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
