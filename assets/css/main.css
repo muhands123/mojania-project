@@ -1,0 +1,56 @@
+/* التنسيقات العامة لكل الصفحة */
+:root {
+  --primary-color: #2c8dfb; /* اللون الأساسي */
+  --secondary-color: #f8f9fa; /* اللون الثانوي */
+  --text-color: #333; /* لون النص الأساسي */
+  --border-radius: 10px; /* زوايا دائرية */
+}
+
+/* إعدادات الصفحة الكاملة */
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* التنسيقات الخاصة بالهيدر */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* تنسيقات بطاقات الأدوات */
+.tool-card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيقات عرض النقاط */
+.points-display {
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* التنسيقات للهواتف */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
