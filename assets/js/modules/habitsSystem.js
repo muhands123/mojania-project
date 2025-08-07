@@ -1,44 +1,50 @@
 export class HabitsSystem {
-    constructor() {
+    constructor(pointsSystem) {
+        this.pointsSystem = pointsSystem;
         this.habits = this.loadHabits();
         this.renderHabits();
     }
 
+    // تحميل العادات من الذاكرة المحلية
     loadHabits() {
-        return JSON.parse(localStorage.getItem('mojania-habits')) || [];
+        const saved = localStorage.getItem('mojania-habits');
+        return saved ? JSON.parse(saved) : [];
     }
 
+    // حفظ العادات في الذاكرة المحلية
     saveHabits() {
         localStorage.setItem('mojania-habits', JSON.stringify(this.habits));
     }
 
+    // عرض العادات في الواجهة
     renderHabits() {
-        const habitsList = document.getElementById('habits-list');
-        habitsList.innerHTML = this.habits.map((habit, index) => `
+        const container = document.getElementById('habits-list');
+        container.innerHTML = this.habits.map((habit, index) => `
             <div class="habit-item" data-id="${index}">
                 <input type="checkbox" ${habit.completed ? 'checked' : ''}>
-                <span>${habit.text}</span>
+                <span class="habit-text">${habit.text}</span>
                 <button class="delete-btn">حذف</button>
             </div>
         `).join('');
 
-        // إضافة مستمعي الأحداث
-        document.querySelectorAll('.delete-btn').forEach(btn => {
+        // إضافة الأحداث
+        container.querySelectorAll('.delete-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const habitId = e.target.closest('.habit-item').dataset.id;
-                this.deleteHabit(habitId);
+                const id = e.target.closest('.habit-item').dataset.id;
+                this.deleteHabit(id);
             });
         });
 
-        document.querySelectorAll('.habit-item input').forEach(checkbox => {
+        container.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
             checkbox.addEventListener('change', (e) => {
-                const habitId = e.target.closest('.habit-item').dataset.id;
-                this.toggleHabit(habitId);
+                const id = e.target.closest('.habit-item').dataset.id;
+                this.toggleHabit(id);
             });
         });
     }
 
-    addHabit(text, pointsSystem) {
+    // إضافة عادة جديدة
+    addHabit(text) {
         this.habits.push({
             text,
             completed: false,
@@ -46,18 +52,24 @@ export class HabitsSystem {
         });
         this.saveHabits();
         this.renderHabits();
-        pointsSystem.addPoints(5); // منح 5 نقاط عند إضافة عادة
     }
 
+    // حذف عادة
     deleteHabit(id) {
         this.habits.splice(id, 1);
         this.saveHabits();
         this.renderHabits();
     }
 
+    // تغيير حالة العادة
     toggleHabit(id) {
-        this.habits[id].completed = !this.habits[id].completed;
+        const habit = this.habits[id];
+        habit.completed = !habit.completed;
+        
+        if (habit.completed) {
+            this.pointsSystem.addPoints(10, 'habit');
+        }
+        
         this.saveHabits();
-        this.renderHabits();
     }
 }
