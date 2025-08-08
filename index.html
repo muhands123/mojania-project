@@ -45,5 +45,25 @@
 
     <!-- ملفات الجافاسكريبت -->
     <script type="module" src="assets/js/app.js"></script>
+<div class="coffee-box">
+  <h3>ادعمنا بفنجان قهوة!</h3>
+  <p>لتطوير الموقع وإضافة ميزات جديدة</p>
+  <button id="donate-btn">تبرع الآن</button>
+  <div id="donate-options" style="display:none;">
+    <a href="https://paypal.me/اسمك" target="_blank">PayPal</a>
+    <button onclick="copyBank()">نسخ رقم الحساب البنكي</button>
+  </div>
+</div>
+
+<script>
+document.getElementById('donate-btn').addEventListener('click', function() {
+  document.getElementById('donate-options').style.display = 'block';
+});
+
+function copyBank() {
+  navigator.clipboard.writeText('IBAN: YOUR_BANK_ACCOUNT');
+  alert('تم نسخ رقم الحساب! شكراً لدعمك ❤️');
+}
+</script>
 </body>
 </html>
