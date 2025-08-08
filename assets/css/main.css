@@ -1,4 +1,4 @@
-/* التنسيقات العامة */
+فخ/* التنسيقات العامة */
 :root {
     --primary: #2c8dfb; /* اللون الأزرق الأساسي */
     --secondary: #f5f7fa; /* لون الخلفية */
@@ -81,4 +81,7 @@ input[type="text"] {
   display: block;
   margin: 10px 0;
   color: #2c8dfb;
+}
+.simple-calendar {
+  margin: 20px auto;
 }
